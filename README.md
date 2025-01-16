@@ -54,9 +54,7 @@ Invoke-WebRequest -Uri http://127.0.0.1:3000/add -Method POST -Body '{"num1": 5,
 ```
 Expected Response:
 ```json
-{
-    "result": 15
-}
+Content           : {"result": 15}
 ```
 
 #### Test File Upload Function
