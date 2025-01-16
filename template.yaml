@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  AddNumbersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      CodeUri: lambda_add_numbers/
+      Events:
+        AddNumbersAPI:
+          Type: Api
+          Properties:
+            Path: /add
+            Method: POST
+
+  UploadFileFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      CodeUri: lambda_upload_file/
+      Events:
+        UploadFileAPI:
+          Type: Api
+          Properties:
+            Path: /upload
+            Method: POST
