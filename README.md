@@ -49,7 +49,8 @@ sam local start-api
 ### 4. Test the API Endpoints
 #### Test Addition Function
 ```sh
-curl -X POST http://127.0.0.1:3000/add -d '{"num1": 5, "num2": 10}' -H "Content-Type: application/json"
+Invoke-WebRequest -Uri http://127.0.0.1:3000/add -Method POST -Body '{"num1": 5, "num2": 10}' -ContentType 'application/json'
+
 ```
 Expected Response:
 ```json
@@ -60,7 +61,8 @@ Expected Response:
 
 #### Test File Upload Function
 ```sh
-curl -X POST http://127.0.0.1:3000/upload -F "file=@path/to/your/file.pdf"
+Invoke-WebRequest -Uri http://127.0.0.1:3000/upload -Method POST -Body '{"file_content": "This is a test file content", "bucket_name": "your-s3-bucket-name", "file_name": "test.txt"}' -ContentType 'application/json'
+
 ```
 Expected Response:
 ```json
